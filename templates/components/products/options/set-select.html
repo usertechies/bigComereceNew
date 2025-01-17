@@ -1,0 +1,31 @@
+<div class="form-field" data-product-attribute="set-select">
+    <label class="form-label form-label--alternate form-label--inlineSmall" for="attribute_select_{{id}}">
+        {{ this.display_name }}:
+
+        {{> components/common/requireness-msg}}
+    </label>
+
+    <select class="form-select form-select--small" name="attribute[{{this.id}}]" id="attribute_select_{{id}}" {{#if required}}required{{/if}}>
+        <option value="">{{lang 'products.choose_options'}}</option>
+        {{#each this.values}}
+            <option data-product-attribute-value="{{id}}" value="{{id}}" {{#if selected}}selected data-default{{/if}}>{{label}}</option>
+        {{/each}}
+    </select>
+</div>
+
+<div class="form-field" data-product-attribute="custom-product-1"></div>
+    <label class="form-label">Custom Product 1:</label>
+    <label><input type="checkbox" name="custom_product_1" value="custom_option_1"> Custom Option 1</label>
+    <label><input type="checkbox" name="custom_product_1" value="custom_option_2"> Custom Option 2</label>
+    <label><input type="checkbox" name="custom_product_1" value="custom_option_3"> Custom Option 3</label>
+</div>
+
+<div class="form-field" data-product-attribute="custom-product-2">
+    <label class="form-label" for="custom_product_2_select">Custom Product 2:</label>
+    <select class="form-select" name="custom_product_2" id="custom_product_2_select">
+        <option value="">{{lang 'products.choose_options'}}</option>
+        <option type="checkbox" value="custom_option_1">Custom Option 1</option>
+        <option  type="checkbox" value="custom_option_2">Custom Option 2</option>
+        <option type="checkbox" value="custom_option_3">Custom Option 3</option>
+    </select>
+</div>
